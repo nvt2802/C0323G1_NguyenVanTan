@@ -1,0 +1,5 @@
+Begin
+	nhap dola
+	vnd = dola * 23000
+	output vnd
+End

@@ -1,0 +1,7 @@
+Begin
+	nhap Math
+	nhap Physics
+	nhap Chemistry
+	Average = ( Math + Physic + Chemistry ) / 3
+	output Average
+End

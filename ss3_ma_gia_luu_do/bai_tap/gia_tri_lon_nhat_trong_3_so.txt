@@ -1,0 +1,14 @@
+Begin 
+	Nhap a
+	Nhap b
+	Nhap c
+	IF ( a > b and a >c )
+		Display “ a la so lon nhat”
+		End If
+	Else If ( b > c )
+		Display “b la so lon nhat”
+		End IF
+	Else 
+		Display “c la so lon nhat”
+	End IF
+End
