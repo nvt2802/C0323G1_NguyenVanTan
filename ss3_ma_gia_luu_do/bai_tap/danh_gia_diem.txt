@@ -13,7 +13,7 @@ Begin
 		Else if n>=35 and n<45
 			Display “ Diem D”
 			End if
-		Else n<35
+		Else if n>0
 			Display “ Diem E”
 			End if
 	Else display “ diem khong hop le”
