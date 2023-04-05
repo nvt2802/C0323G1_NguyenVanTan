@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So thich cua ban</title>
+    <style>
+         h2{
+             background-color: red;
+             text-align:center;
+        }
+        fieldset {
+            display: block;
+            margin-left: 2px;
+            margin-right: 1190px;
+            padding-top: 0.35em;
+            padding-bottom: 0.625em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+        }
+        input[type=email]{
+            margin-left: 24px;
+        }
+        input[name=submitForm]{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" action="" >
+        <fieldset >
+        <h2>So thich cua ban</h2>
+        <label for="name">Ho va ten: </label>
+        <b><input type="text" name="name" id="Name"/></b><br/>
+        <label for="email">Email: </label>
+        <b><input type="email" name="email" id="Email"/></b><br/>
+        <label >So thich: </label>
+        <input type="checkbox" name="hobby"/>The thao
+        <input type="checkbox" name="hobby"/>Am nhac
+        <input type="checkbox" name="hobby"/>Doc sach
+        <input type="checkbox" name="hobby"/>Luot web
+        <input type="checkbox" name="hobby"/>Choi game
+        <input type="checkbox" name="hobby"/>Dien anh
+        <input type="checkbox" name="hobby"/>Du lich<br/>
+        <input type="button" name="submitForm" value="Gui thong tin"/>
+        <input type="button" name="resetForm" value="Nhap lai"/>
+        </fieldset>
+    </form>
+</body>
+</html>

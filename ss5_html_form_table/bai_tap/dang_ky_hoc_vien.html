@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dang ky hoc vien</title>
+    <style>
+        input[type=text]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        input[type=email]{
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        input[type=button] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <form method="get" name="dangKy" action="" >
+
+            <h2>DANG KY HOC VIEN</h2>
+        <div class="row">
+            <div class="col-25">
+            <label for="Name">Ho va ten</label>
+            </div>
+            <div class="col-75">
+            <input type="text" name="name" id="Name"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="DayOfBtirth">Ngay sinh</label>
+            </div>
+            <div class="col-75">
+            <input type="date" name="DoB" id="DayOfBtirth"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label>Gioi tinh</label>
+            </div>
+                <div class="col-75">
+            <input type="radio" name="gender" id="Nam" value="Nam"/>
+            <label for="Nam">Nam</label>
+            <input type="radio" name="gender" id="Nu" value="Nu"/>
+            <label for="Nu">Nu</label>
+            <br/>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="Address">Dia chi</label>
+            </div>
+            <div class="col-75">
+            <input type="text" name="address" id="Address"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="Class">Lop</label>
+            </div>
+            <div class="col-75">
+            <select name="class" id="Class">
+                <option value="">-Chon lop-</option>
+                <option value="C03231G1">C03231G1</option>
+                <option value="C02231G1">C02231G1</option>
+                <option value="C01231G1">C01231G1</option>
+                <option value="C12221G1">C12221G1</option>
+                <option value="C11221G1">C11221G1</option>
+            </select><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="Email">Email</label>
+            </div>
+            <div class="col-75">
+            <input type="email" name="email" id="Email"/><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+            <label for="Phone">Dien thoai</label>
+            </div>
+            <div class="col-75">
+            <input type="text" name="phone" id="Phone"/><br/>
+            </div>
+        </div>
+            <input type="button" name="btnSubmit" value="Dang Ky"/>
+            <input type="button" name="btnReset" value="Nhap lai"/>
+
+    </form>
+</div>
+</body>
+</html>
