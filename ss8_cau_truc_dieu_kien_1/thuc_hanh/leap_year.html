@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra Nam Nhuan</title>
+</head>
+<body>
+<label for="Year">Enter year: </label>
+    <input type="text" id="Year"/>
+    <button onclick="fcIsLeapYear()">click</button>
+    <p id="Result"></p>
+</body>
+<script>
+    function fcIsLeapYear(){
+        let year = parseInt(document.getElementById("Year").value);
+        let isLeapYear = false;
+
+        let isDivisibleBy4 = year % 4 === 0;
+        if (isDivisibleBy4) {
+            let isDivisibleBy100 = year % 100 === 0;
+            if (isDivisibleBy100) {
+                let isDivisibleBy400 = year % 400 === 0;
+                if (isDivisibleBy400) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+
+        if (isLeapYear) {
+            document.getElementById("Result").innerHTML=year + " is a leap year";
+        } else {
+            document.getElementById("Result").innerHTML=year + " is Not a leap year";
+        }
+    }
+</script>
+</html>

@@ -5,13 +5,19 @@
     <title>Chu vi va dien tich hinh tron</title>
 </head>
 <body>
-
+    <label for="R">Nhap ban kinh: </label>
+    <input type="text" id="R"/>
+    <button onclick="Tinh()">Tinh</button>
+    <p id="sircum"></p>
+    <p id="area"></p>
 </body>
 <script>
-    let r = prompt("Nhap ban kinh: ");
-    let s = r * r * 3.14;
-    let c = r * 3.14;
-    alert("Dien tich hinh tron la: "+ s);
-    alert("Chu vi hinh tron la: "+ c);
+    function Tinh() {
+        let r = document.getElementById("R").value;
+        let s = r * r * 3.14;
+        let c = r * 3.14;
+        document.getElementById("sircum").innerHTML = "Chu vi :" + c;
+        document.getElementById("area").innerHTML = "Dien tich :" + s;
+    }
 </script>
 </html>

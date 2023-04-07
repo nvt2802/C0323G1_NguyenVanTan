@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+  <input type="text" id="Number1">
+  <input type="text" id="Number2"><br>
+  <button onclick="Add()">Addition(+)</button>
+  <button onclick="Sub()">Subtraction(-)</button>
+  <button onclick="Multi()">Multiplication(x)</button>
+  <button onclick="Div()">division(/)</button>
+<p id="Result"></p>
+</body>
+  <script>
+    function Add(){
+      let number1 = document.getElementById("Number1").value;
+      let number2 = document.getElementById("Number2").value;
+      let num1 = parseInt(number1);
+      let num2 = parseInt(number2);
+      let add = num1 + num2;
+      document.getElementById("Result").innerHTML="Result: " + add;
+    }
+    function Sub(){
+      let number1 = document.getElementById("Number1").value;
+      let number2 = document.getElementById("Number2").value;
+        let num1 = parseInt(number1);
+        let num2 = parseInt(number2);
+      let sub = num1 - num2;
+      document.getElementById("Result").innerHTML="Result: " + sub;
+    }
+    function Multi(){
+      let number1 = document.getElementById("Number1").value;
+      let number2 = document.getElementById("Number2").value;
+        let num1 = parseInt(number1);
+        let num2 = parseInt(number2);
+      let multi = num1 * num2;
+      document.getElementById("Result").innerHTML="Result: " + multi;
+    }
+    function Div(){
+      let number1 = document.getElementById("Number1").value;
+      let number2 = document.getElementById("Number2").value;
+        let num1 = parseInt(number1);
+        let num2 = parseInt(number2);
+      let div = num1 / num2;
+      document.getElementById("Result").innerHTML="Result: " + div;
+    }
+  </script>
+</html>

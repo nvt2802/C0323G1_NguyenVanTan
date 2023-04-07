@@ -5,20 +5,27 @@
     <title>Tinh diem trung binh va tong</title>
 </head>
 <body>
-
+    <label for="Physics">Nhap diem vat ly:</label>
+    <input type="text" id="Physics"><br>
+    <label for="Chemistry">Nhap diem Hoa hoc:</label>
+    <input type="text" id="Chemistry"><br>
+    <label for="Biology">Nhap diem Sinh hoc:</label>
+    <input type="text" id="Biology"><br>
+    <button onclick="Tinh()">Tinh</button>
+    <p id="Average"></p>
+    <p id="Sum"></p>
 </body>
 <script>
-    let physics;
-    let chemistry;
-    let biology;
-    physics = prompt("Enter physics score");
-    chemistry = prompt("Enter chemistry score");
-    biology = prompt("Enter biology score");
-    let phy = parseInt(physics);
-    let che = parseInt(chemistry);
-    let bio = parseInt(biology);
-    let sum = phy + che + bio;
-    document.write("Sum :"+ sum);
-    document.write("Average :"+ sum/3);
+    function Tinh() {
+        let physics = document.getElementById("Physics").value;
+        let chemistry = document.getElementById("Chemistry").value;
+        let biology = document.getElementById("Biology").value;
+        let phy = parseInt(physics);
+        let che = parseInt(chemistry);
+        let bio = parseInt(biology);
+        let sum = phy + che + bio;
+        document.getElementById("Average").innerHTML = "Trung binh la: " + sum / 3;
+        document.getElementById("Sum").innerHTML = "Tong la: " + sum;
+    }
 </script>
 </html>
