@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh so ngay trong mot thang</title>
+</head>
+<body>
+<label for="Month">Nhap thang: </label>
+<input type="number" min="1" max="12" id="Month" style="width:10%">
+<button onclick="tinhSoNgay()">Tinh so ngay</button>
+<br>
+<p id="Result"></p>
+</body>
+<script>
+    function tinhSoNgay() {
+        let month = Number(document.getElementById("Month").value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 10:
+            case 12:
+                document.getElementById("Result").innerHTML = "Thang " + month + " co 31 ngay";
+                break
+            case 4:
+            case 6:
+            case 8:
+            case 9:
+            case 11:
+                document.getElementById("Result").innerHTML = "Thang " + month + " co 30 ngay";
+                break
+            case 2:
+                document.getElementById("Result").innerHTML = "Thang 2 co 28 hoac 29 ngay";
+                break
+            default:
+                document.getElementById("Result").innerHTML = "Vui long nhap lai thang";
+        }
+    }
+</script>
+</html>

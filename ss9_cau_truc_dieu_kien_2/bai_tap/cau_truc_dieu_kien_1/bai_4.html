@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = prompt("nhap so thu nhat: ");
+    let b = prompt("nhap so thu hai: ");
+    let c = prompt("nhap so thu ba: ");
+    if (a > b) {
+        if (a > c) {
+            if (b > c) {
+                alert(a + b + c);
+            } else alert(a + c + b);
+        } else if (a > b) {
+            alert(c + a + b);
+        } else alert(b + c + a);
+    } else if (a > c) {
+        alert(b + a + c);
+    } else alert(c + b + a);
+
+</script>
+</html>

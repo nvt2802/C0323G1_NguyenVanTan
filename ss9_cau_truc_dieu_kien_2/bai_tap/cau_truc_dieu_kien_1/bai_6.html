@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let doanhSo = Number(prompt("nhap doanh so(trieu): "));
+    if (doanhSo >= 0) {
+        if (doanhSo <= 10) {
+            alert("hoa hong cua ban la: " + (doanhSo * 3 / 100) * 1000000);
+        } else if (doanhSo <= 30) {
+            alert("hoa hong cua ban la: " + (10 * 3 / 100 + (doanhSo - 10) * 5 / 100) * 1000000);
+        } else alert("hoa hong cua ban la: " + (10 * 3 / 100 + (30 - 10) * 5 / 100 + (doanhSo - 30) * 7 / 100) * 1000000);
+    } else alert("doanh so khong hop le");
+</script>
+</html>
