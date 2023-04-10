@@ -42,7 +42,7 @@
             </select>
         </td>
         <td>
-            <button onclick="Convert()">Convert</button>
+            <button onclick="convert()">Convert</button>
         </td>
     </tr>
     </tbody>
@@ -51,21 +51,21 @@
 </body>
 </html>
 <script>
-    function Convert() {
-        let Amount = document.getElementById("Amount").value;
-        let From = document.getElementById("From").value;
-        let To = document.getElementById("To").value;
-        let Result;
-        if (From === "USD" && To === "VND") {
-            Result = Amount * 23000 + "đ";
-        } else if (From === "VND" && To === "USD") {
-            Result = Amount / 23000 + "$";
-        } else if (From === "USD" && To === "USD") {
-            Result = Amount + "$";
+    function convert() {
+        let amount = document.getElementById("Amount").value;
+        let from = document.getElementById("From").value;
+        let to = document.getElementById("To").value;
+        let result;
+        if (from === "USD" && to === "VND") {
+            result = amount * 23000 + "đ";
+        } else if (from === "VND" && to === "USD") {
+            result = amount / 23000 + "$";
+        } else if (from === "USD" && to === "USD") {
+            result = amount + "$";
         } else {
-            Result = Amount + "đ";
+            result = amount + "đ";
         }
-        document.getElementById("Result").innerHTML = "Result: " + Result;
+        document.getElementById("Result").innerHTML = "Result: " + result;
     }
 
 </script>

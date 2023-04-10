@@ -5,13 +5,13 @@
     <title>Chuyen do C sang do F</title>
 </head>
 <body>
-   <label for="C">Nhap do C: </label>
-    <input type="text" id="C"/>
-    <button onclick="Convert()">Convert</button>
-    <p id="F"></p>
+<label for="C">Nhap do C: </label>
+<input type="text" id="C"/>
+<button onclick="convert()">Convert</button>
+<p id="F"></p>
 </body>
 <script>
-    function Convert(){
+    function convert(){
         let C = document.getElementById("C").value;
         let F = (C * 1.8) + 32;
         document.getElementById("F").innerHTML="Do F: "+ F;
