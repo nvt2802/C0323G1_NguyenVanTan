@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh thue thu nhap ca nhan</title>
+</head>
+<body>
+
+</body>
+<script>
+    let thuNhap = Number(prompt("thu nhap cua ban la(trieu d/thang):"));
+    let soNguoiPhuThuoc = Number(prompt("so nguoi phu thuoc:"));
+    let giamTruGiaCanh = Number(prompt("giam tru gia canh cho ban than:"));
+    let thue;
+    if (thuNhap < 5) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 5 / 100;
+    } else if (thuNhap < 10) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 10 / 100 - 0.25;
+    } else if (thuNhap < 18) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 15 / 100 - 0.75;
+    } else if (thuNhap < 32) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 20 / 100 - 1.65;
+    } else if (thuNhap < 52) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 25 / 100 - 3.25;
+    } else if (thuNhap < 80) {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 30 / 100 - 5.85;
+    } else {
+        thue = (thuNhap - soNguoiPhuThuoc * 4.4 - giamTruGiaCanh) * 35 / 100 - 9.85;
+    }
+    alert("so tien thue ban phai dong la: " + thue);
+</script>
+</html>

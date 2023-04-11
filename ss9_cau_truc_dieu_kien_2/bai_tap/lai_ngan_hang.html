@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lai suat ngan hang</title>
+</head>
+<body>
+    <label for="TienVay">So tien ban muon vay: </label>
+    <input type="text" id="TienVay"/><br>
+    <label for="LaiSuat">Lai suat ngan hang(%): </label>
+    <input type="text" id="LaiSuat"/><br>
+    <label for="SoThang" >Thoi han vay(thang): </label>
+    <input type="text" id="SoThang"/><br>
+    <button type="button" onclick="tinhLai()">Xem ket qua</button>
+    <p id="TienTra"></p>
+</body>
+<script>
+    // let tienVay = Number(prompt("so tien ban muon vay la: "));
+    // const laiSuat = 12/100;
+    // const soThang = 3;
+    // let traNoGoc= tienVay/soThang;
+    // let lai=tienVay*laiSuat;
+    // let tongTien;
+    // tongTien= (lai + traNoGoc)*3;
+    // alert(tongTien);
+
+
+
+    function tinhLai() {
+        let tienVay = Number(document.getElementById("TienVay").value);
+        let laiSuat = Number(document.getElementById("LaiSuat").value);
+        let soThang= Number(document.getElementById("SoThang").value);
+        let tienTra;
+        tienTra = tienVay * (1 + (laiSuat / 100) / soThang) ** soThang;
+        document.getElementById("TienTra").innerHTML = "Tong so tien ban phai tra: " + tienTra;
+    }
+</script>
+</html>
