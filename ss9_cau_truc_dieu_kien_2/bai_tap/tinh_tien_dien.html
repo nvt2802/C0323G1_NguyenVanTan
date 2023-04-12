@@ -15,7 +15,7 @@
     const B4 = 2.536;
     const B5 = 2.834;
     const B6 = 2.927;
-    let sum ;
+    let sum;
     if (kWh < 50) {
         sum = B1 * kWh;
     } else if (kWh < 100) {
@@ -27,6 +27,6 @@
     } else if (kWh < 400) {
         sum = 50 * B1 + 50 * B2 + 100 * B3 + 100 * B4 + (kWh - 300) * B5;
     } else sum = 50 * B1 + 50 * B2 + 100 * B3 + 100 * B4 + 100 * B5 + (kWh - 400) * B6;
-    alert("tong tien dien bao gom thue cua ban la:"+sum+sum*10/100);
+    alert("tong tien dien bao gom thue cua ban la:" + sum + sum * 10 / 100);
 </script>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let nextTerm;
+    document.write("so dau tien trong day fibonacci chia het cho 5: <br>");
+    for (let i = 1; i <= 20; i++) {
+        if (n1 !== 0 && n1 % 5 === 0) {
+            document.write(n1 + "<br>");
+            break;
+        }
+        nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+    }
+</script>
+</html>

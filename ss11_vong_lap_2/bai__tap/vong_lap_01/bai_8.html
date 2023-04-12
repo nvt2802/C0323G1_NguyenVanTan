@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="choi()">Choi</button>
+</body>
+<script>
+    function choi() {
+        let nhap = +prompt("ban muon doan so trong khoan nao?");
+        let numberRandom = Math.floor(Math.random() * nhap);
+        for (let i = 0; i < 3; i++) {
+            let soDoan = +prompt("nhap so ban doan");
+            if (soDoan > numberRandom) {
+                alert("so nay be hon so ban vua nhap");
+            } else if (soDoan < numberRandom) {
+                alert("so nay lon hon so ban vua nhap");
+            } else {
+                alert("chuc mung!!! ban da doan dung roiiii");
+                break;
+            }
+        }
+        alert("so random la: " + numberRandom);
+    }
+</script>
+</html>

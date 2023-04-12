@@ -12,7 +12,7 @@
     let cuoiKy = Number(prompt("Nhap diem thi cuoi ky: "));
     let trungBinh = (giuaKy + cuoiKy) / 2;
     if (trungBinh <= 10) {
-        if (trungBinh >= 8) {
+        if (trungBinh <= 8) {
             alert("Hoc luc gioi");
         } else if (trungBinh >= 6.5) {
             alert("Hoc luc kha");
@@ -21,8 +21,12 @@
         } else if (trungBinh >= 3.5) {
             alert("Hoc luc yeu");
         } else if (trungBinh >= 0) {
-            alert("Hoc luc kem")
-        } else alert("diem khong hop le 0")
-    } else alert("diem khong hop le 1")
+            alert("Hoc luc kem");
+        } else {
+            alert("diem khong hop le 0");
+        }
+    } else {
+        alert("diem khong hop le 1");
+    }
 </script>
 </html>

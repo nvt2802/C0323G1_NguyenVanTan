@@ -18,14 +18,15 @@
         let height = parseFloat(document.getElementById("Height").value);
         let bmi;
         bmi = weight / (height ^ 2);
-        if (bmi < 18)
+        if (bmi < 18) {
             document.write("Underweight");
-        else if (bmi < 25.0)
+        } else if (bmi < 25.0) {
             document.write("Normal");
-        else if (bmi < 30.0)
+        } else if (bmi < 30.0) {
             document.write("Overweight");
-        else
+        } else {
             document.write("Obese");
+        }
     }
 </script>
 </html>

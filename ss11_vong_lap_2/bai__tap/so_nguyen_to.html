@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi cac so nguyen to dau tien</title>
+</head>
+<body>
+
+</body>
+<script>
+    // function kiemTraSNT(numbers) {
+    //     let N = 0;
+    //     let count = 0;
+    //     for (let i = 2; i < 1000; i++) {
+    //         if (count < numbers) {
+    //             for (let j = 1; j <= i; j++) {
+    //                 if (i % j == 0) {
+    //                     N++;
+    //                 }
+    //             }
+    //             if (N == 2) {
+    //                 document.write(i + "<br>");
+    //                 count++;
+    //             }
+    //             N = 0;
+    //         } else {
+    //             break;
+    //         }
+    //     }
+    // }
+    // let numbers = prompt("ban muon xem bao nhieu so nguyen to: ");
+    // kiemTraSNT(numbers)
+
+    let n = 2;
+    let countSNT = 0;
+    while (countSNT < 20) {
+        let count = 0;
+        for (let i = 1; i < n; i++) {
+            if (n % i === 0) {
+                count++;
+            }
+        }
+        if (count === 1) {
+            countSNT++;
+            document.write(n + "<br>");
+        }
+        n++
+    }
+</script>
+</html>
