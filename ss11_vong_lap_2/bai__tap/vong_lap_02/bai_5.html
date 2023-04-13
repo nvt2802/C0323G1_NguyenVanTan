@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lai suat ngan hang</title>
+</head>
+<body>
+<h1>CÔNG CỤ TÍNH TOÁN KHOẢN VAY NGÂN HÀNG</h1>
+<label for="TienVay">So tien vay</label><br>
+<input type="text" id="TienVay"/><br>
+<label for="SoThang">Thoi han vay</label><br>
+<input type="text" id="SoThang"/><br>
+<label for="LaiSuat">Lai suat vay</label><br>
+<input type="text" id="LaiSuat"/><br>
+<button type="button" onclick="tinhLaiSuat()">Xem ket qua</button>
+</body>
+<script>
+    function tinhLaiSuat() {
+        let tienVay = +document.getElementById("TienVay").value;
+        let soThang = +document.getElementById("SoThang").value;
+        let laiSuat = (+document.getElementById("LaiSuat").value) / 100;
+        let tienGoc = tienVay / soThang;
+        let tienLai = 0;
+        for (let i = 1; i <= soThang; i++) {
+            tienLai = (tienVay * laiSuat) / soThang;
+            document.write("Thang " + i + ":");
+            document.write("so tien phai tra:" + (tienGoc+tienLai)+ "_");
+            document.write("tien lai: " + tienLai + "_");
+            tienVay = tienVay - tienGoc;
+            document.write(" so goc con lai:" + tienVay + "<br>");
+        }
+    }
+</script>
+</html>

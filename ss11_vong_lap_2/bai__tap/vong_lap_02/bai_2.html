@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh giai thua</title>
+</head>
+<body>
+<script>
+    function giaiThua(x) {
+        if (x === 0) {
+            return 1;
+        }
+        return x * giaiThua(x - 1);
+    }
+
+    document.write(giaiThua(10));
+</script>
+</body>
+</html>
