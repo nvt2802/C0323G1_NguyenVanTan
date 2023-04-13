@@ -10,20 +10,14 @@
 <script>
     let a = Number(prompt("nhap chieu dai hinh chu nhat"));
     let b = Number(prompt("nhap chieu rong hinh chu nhat"));
-    let sout;
-    sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
     for (let i = 1; i <= a; i++) {
-        sout = sout + "<tr>";
         for (let j = 1; j <= b; j++) {
             if (i > 1 && j > 1 && i < a && j < b) {
-                sout = sout + "<td> </td>";
+                document.write("&nbsp;&nbsp;&nbsp;")
             } else
-                sout = sout + "<td>*</td>";
-
+                document.write("* ");
         }
-        sout = sout + "</tr>";
+        document.write("<br>");
     }
-    sout = sout + "</table>";
-    document.write(sout);
 </script>
 </html>
