@@ -8,16 +8,17 @@
 
 </body>
 <script>
-    let nhietDo = Number(prompt("nhap nhiet do hien tai: "));
-    while (nhietDo > 100 || nhietDo < 20) {
+    let nhietDo;
+    do {
+        nhietDo = Number(prompt("nhap nhiet do hien tai: "));
         if (nhietDo > 100) {
             alert("nhiet do cao qua");
-            nhietDo = +prompt("Nhap nhiet do hien tai: ");
-        } else {
+        } else if (nhietDo < 20) {
             alert("nhiet do thap qua");
-            nhietDo = +prompt("Nhap nhiet do hien tai: ");
+        } else {
+            alert("dc rui :)))");
         }
     }
-        alert("dc rui :)))");
+    while (nhietDo > 100 || nhietDo < 20) ;
 </script>
 </html>

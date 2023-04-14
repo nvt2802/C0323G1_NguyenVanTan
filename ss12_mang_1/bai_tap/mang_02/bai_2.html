@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("ban muon bao nhieu ky tu");
+    let x = [];
+    for (let i = 0; i < n; i++) {
+        x[i] = prompt("nhap ky tu thu " + i + 1);
+    }
+    let first = 0;
+    let last = x.length - 1;
+    document.write("chuoi ban nhap la: " + x);
+    while (first < last) {
+        let b = x[first];
+        x[first] = x[last];
+        x[last] = b;
+        first++;
+        last--;
+    }
+    document.write("- sau khi dao nguoc: " + x.join(""));
+</script>
+</body>
+</html>

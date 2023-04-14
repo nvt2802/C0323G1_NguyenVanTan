@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [3, 5, 1, 98, 123, 789, 890, -123, 329, 23];
+    let max = numbers[0];
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+        sum += numbers[i];
+    }
+    document.write("max: " + max + " average value: " + sum / numbers.length);
+</script>
+</body>
+</html>

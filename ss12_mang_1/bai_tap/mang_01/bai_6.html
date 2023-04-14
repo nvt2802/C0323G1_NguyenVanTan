@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [1, 5, 6, 12, 65, 84, 86, 21, 17, 56];
+    let V = +prompt("nhap so nguyen bat ky");
+    let vInArray = false;
+    for (let i = 0; i < numbers.length; i++) {
+        if (V === numbers[i]) {
+            document.write("V is in the array");
+            vInArray = true;
+        }
+    }
+    if (vInArray === false) {
+        document.write("V is not in the array");
+    }
+</script>
+</body>
+</html>

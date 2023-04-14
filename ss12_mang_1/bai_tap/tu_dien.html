@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TU DIEN</title>
+</head>
+<body>
+<label for="English">Nhap tu</label>
+<input type="text" id="English"/>
+<button type="button" onclick="dich()">Dich</button>
+<p id="TiengViet"></p>
+</body>
+<script>
+    let english = ["apple","banana","mango"];
+    let tiengViet = ["tao","chuoi","xoai"];
+    function dich(){
+        let kiemTra = false;
+        let nhap = document.getElementById("English").value;
+        for (let i = 0; i < english.length; i++) {
+            if (nhap == english[i]) {
+                document.getElementById("TiengViet").innerHTML = tiengViet[i];
+                kiemTra=true;
+            }
+        }
+        if(kiemTra==false){
+                document.getElementById("TiengViet").innerHTML ="khong tim thay";
+        }
+    }
+</script>
+</html>

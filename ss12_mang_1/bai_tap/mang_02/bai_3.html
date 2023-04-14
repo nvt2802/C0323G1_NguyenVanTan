@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("ban muon nhap bao nhieu chuoi ky tu");
+    let x = [];
+    for (let i = 0; i < n; i++) {
+        x[i] = prompt("nhap ky tu thu " + (i + 1));
+    }
+    document.write(x);
+    let count = 0;
+    for (let i = 0; i < x.length; i++) {
+        if (isNaN(x[i]) == false) {
+            count++;
+        }
+    }
+    document.write("<br> so ky tu so la: " + count);
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [3, 5, 6, 9, 8, 4, 1, 7, 22, 14];
+    let V = +prompt("nhap V");
+    for (let i = 0; i < numbers.length; i++) {
+        if (V === numbers[i]) {
+            numbers.splice(i, 1);
+            numbers.push(0);
+        }
+    }
+    document.write(numbers);
+</script>
+</body>
+</html>
