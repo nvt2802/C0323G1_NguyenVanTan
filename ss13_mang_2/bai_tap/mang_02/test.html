@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var format = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    let str = prompt("");
+    let array = [];
+    array = str.split(" ");
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (isNaN(array[i]) === false || format.test(array[i])) {
+            continue;
+        }
+        document.write(array[i] + " ");
+        count++;
+    }
+    document.write("<br>so tu trong chuoi la: " + count);
+</script>
+</body>
+</html>
