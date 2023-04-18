@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tim chom sao cua ngoi sao</title>
+</head>
+<body>
+
+</body>
+<script>
+    let ngoiSao = ['Plaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', ' Regulus'];
+    let chomSao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+    function timNgoiSao(text) {
+        let result = "khong tim thay ngoi sao nay";
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (text == ngoiSao[i]) {
+                result = chomSao[i];
+            }
+        }
+        return result;
+    }
+
+    let star = prompt("nhap ten mot ngoi sao");
+    alert(timNgoiSao(star));
+</script>
+</html>

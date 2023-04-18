@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>is a number?</title>
+</head>
+<body>
+<label for="Number"></label>
+<input type="text" id="Number" oninput="displayResult()"/>
+is: <span id="result"></span>
+</body>
+<script>
+    function isANumber(num) {
+        return !isNaN(num);
+    }
+
+    function displayResult() {
+        let num = +document.getElementById("Number").value;
+        document.getElementById("result").innerHTML = isANumber(num);
+    }
+
+</script>
+</html>

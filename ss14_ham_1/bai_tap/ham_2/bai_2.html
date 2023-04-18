@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dien tich va chu vi hinh tron</title>
+</head>
+<body>
+<label for="Radius">Radius of a circle:</label>
+<input type="text" id="Radius" oninput="tinh()"/>
+<br/>area of a circle is: <span id="ResultArea"></span>
+<br/>circumference of a circle is: <span id="ResultCircum"></span>
+</body>
+<script>
+    function areaOfCircle(radius) {
+        let result;
+        return result = radius * radius * 3.14;
+    }
+
+    function circumferenceOfCircle(radius) {
+        let result;
+        return result = (radius * 2) * 3.14;
+    }
+
+    function tinh() {
+        let radius = +document.getElementById("Radius").value;
+        document.getElementById("ResultArea").innerHTML = areaOfCircle(radius);
+        document.getElementById("ResultCircum").innerHTML = circumferenceOfCircle(radius);
+    }
+</script>
+</html>

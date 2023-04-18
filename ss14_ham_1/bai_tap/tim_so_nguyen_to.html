@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let flag = true;
+
+        if (n < 2) {
+            flag = false;
+        } else if (n === 2) {
+            flag = true;
+        } else if (n % 2 === 0) {
+            flag = false;
+        } else {
+            for (let i = 3; i < Math.sqrt(n); i += 2) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+
+    let n = +prompt("");
+    if (isPrime(n)) {
+        document.write(n + " la so nguyen to");
+    } else {
+        document.write(n + " khong phai la so nguyen to");
+    }
+</script>
+</body>
+</html>

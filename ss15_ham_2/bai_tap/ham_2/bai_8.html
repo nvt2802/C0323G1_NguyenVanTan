@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dao nguoc cac phan tu trong mang</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [12, 213, 4, 2, 3, 123, 123, 13, 12, 3, 14, 23, 4, 35, 2];
+
+    function daoMang(array) {
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let b = array[first];
+            array[first] = array[last];
+            array[last] = b;
+            first++;
+            last--;
+        }
+        return array;
+    }
+
+    console.log(daoMang(arr));
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So lan xuat hien cua 1 ky tu trong mang</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkArray(array, characters) {
+        let count = 0;
+        let result = -1;
+        for (let i = 0; i < array.length; i++) {
+            if (characters === array[i]) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            result = count;
+        }
+        return result;
+    }
+
+    let arr = prompt("nhap mang ky tu bat ky");
+    let char = prompt("nhap 1 ky tu bat ky");
+    document.write(arr);
+    arr.split('');
+    document.write("<br>ky tu " + char + " xuat hien: " + checkArray(arr, char) + " lan");
+</script>
+</html>

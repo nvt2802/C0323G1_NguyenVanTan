@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh binh phuong</title>
+</head>
+<body>
+<label for="Number">Square of</label>
+<input type="text" id="Number" oninput="tinh()"/>
+is: <span id="result"></span>
+</body>
+<script>
+    function square(n){
+        let result;
+        return result=n*n;
+    }
+    function tinh(){
+        let num = +document.getElementById("Number").value;
+        document.getElementById("result").innerHTML = square(num);
+    }
+</script>
+</html>

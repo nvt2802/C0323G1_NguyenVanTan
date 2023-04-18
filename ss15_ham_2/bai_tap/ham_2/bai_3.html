@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh giai thua</title>
+</head>
+<body>
+<label for="Number">factorial of</label>
+<input type="text" id="Number" oninput="tinh()"/>
+is: <span id="result"></span>
+</body>
+<script>
+    function giaiThua(x) {
+        if (x === 0) {
+            return 1;
+        }
+        return x * giaiThua(x - 1);
+    }
+
+    function tinh() {
+        let num = +document.getElementById("Number").value;
+        document.getElementById("result").innerHTML = giaiThua(num);
+    }
+</script>
+</html>

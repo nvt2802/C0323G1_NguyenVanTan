@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so nho nhat trong 3 so</title>
+</head>
+<body>
+<input type="number" id="Number1" oninput="displayResult()"/>
+<input type="number" id="Number2" oninput="displayResult()"/>
+<input type="number" id="Number3" oninput="displayResult()"/>
+<p id="Result"></p>
+</body>
+<script>
+    function compare3Numbers(number1, number2, number3) {
+        min = number1;
+        if (min >= number2) {
+            min = number2;
+        }
+        if (min >= number3) {
+            min = number3;
+        }
+        return min;
+    }
+
+    function displayResult() {
+        let num1 = document.getElementById("Number1").value;
+        let num2 = document.getElementById("Number2").value;
+        let num3 = document.getElementById("Number3").value;
+        document.getElementById("Result").innerHTML = compare3Numbers(num1, num2, num3);
+    }
+</script>
+</html>
