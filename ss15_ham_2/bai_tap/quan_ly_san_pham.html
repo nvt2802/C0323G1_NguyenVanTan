@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan ly san pham</title>
+</head>
+<body>
+<h2>Add new product</h2>
+<label for="inputProduct"></label>
+<input type="text" id="inputProduct"/>
+<button type="button" onclick="addProduct()">Add</button>
+<h2>Display all product</h2>
+<p id="display"></p>
+</body>
+<script>
+    let productName = ['cafe den', 'cafe sua', 'bac xiu', 'tra sua', 'sua tuoi', 'yaourt'];
+
+    function addProduct(x) {
+        let addProductName = document.getElementById("inputProduct").value;
+        if (addProductName === "") {
+            alert("hop thoai rong!")
+        } else {
+            productName.splice(x,1,addProductName);
+        }
+        document.getElementById("inputProduct").value = "";
+        displayProduct();
+
+    }
+
+    function deleteProduct(x) {
+        if (confirm("ban chac chan muon xoa " + productName[x])) {
+            productName.splice(x, 1);
+        }
+        displayProduct();
+    }
+
+    function editProduct(x) {
+        let editProductName = prompt("Sua lai ten");
+        if(editProductName && editProductName!==" "){
+            productName.splice(x, 1, editProductName);
+        }
+        displayProduct();
+    }
+
+    function editAddProduct(x){
+        document.getElementById("inputProduct").value=productName[x];
+
+    }
+
+    function displayProduct() {
+        let tableString = '<table >';
+        tableString += '<tr>' +
+            '<th>Product name</th> ' +
+            '<th></th> ' +
+            '<th>' + productName.length + ' product</th> ' +
+            '</tr>'
+        for (let i = 0; i < productName.length; i++) {
+            tableString += '<tr>';
+
+            tableString += '<td>' + productName[i] + '</td>';
+            tableString += '<td><button type="button" onclick="editProduct(' + i + ')">Edit</button></td>'
+            tableString += '<td><button type="button" onclick="editAddProduct(' + i + ')">Edit add</button></td>'
+            tableString += '<td><button type="button" onclick="deleteProduct(' + i + ')">Delete</button></td>'
+
+            tableString += '</tr>';
+        }
+        tableString += '</table>';
+
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    displayProduct();
+</script>
+</html>

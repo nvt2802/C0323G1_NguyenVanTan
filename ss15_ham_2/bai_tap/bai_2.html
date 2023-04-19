@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhap phan so");
+    let arr;
+    arr = input.split("/");
+    let check = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (!isNaN(arr[i])) {
+            if (!isNaN(arr[i + 1]) && arr[i + 1] !== '') {
+                check = true;
+            } else {
+                break;
+            }
+        } else {
+            break;
+        }
+    }
+    if (check === true) {
+        arr[0]=arr[0]/timUCLN(arr[0],arr[1]);
+        arr[1]=arr[1]/timUCLN(arr[0],arr[1]);
+        document.write(arr[0]+'/'+arr[1]);
+
+    } else {
+        document.write("khong phai phan so")
+    }
+    function timUCLN(a,b){
+        let arr1=[];
+        let arr2=[];
+        for (let i = 1; i <= a/2; i++) {
+            if(a%i===0){
+                arr1.push(i);
+            }
+        }
+        for (let i = 1; i <= b/2; i++) {
+            if(b%i===0){
+                arr2.push(i);
+            }
+        }
+        let n=0;
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if(arr1[i]===arr2[j]){
+                    n=arr1[i];
+                }
+            }
+        }
+        if(n===0){
+            return 1;
+        }else {
+            return n;
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -8,15 +8,15 @@
 
 </body>
 <script>
-    arr = [];
-
     function swapNumber(a, b) {
-        arr.push(a);
-        arr.push(b);
-        arr.reverse();
-        return arr.join(',');
+        let tmp;
+        tmp = a;
+        a = b;
+        b = tmp
+        return [a, b];
     }
 
-    console.log(swapNumber(1, 2));
+    let arr = swapNumber(1, 2);
+    console.log(arr);
 </script>
 </html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n = +prompt("nhap do dai cua mang");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhap phan tu thu" + i);
+    }
+    document.write("mang " + arr + "<br>");
+    let count = 0;
+    document.write("vi tri index: 0");
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] % i === 0) {
+            document.write("," + i);
+            count++;
+        }
+    }
+
+    if (count === (arr.length - 1)) {
+        document.write("<br>ok");
+    } else {
+        document.write("<br>no");
+    }
+</script>
+</html>

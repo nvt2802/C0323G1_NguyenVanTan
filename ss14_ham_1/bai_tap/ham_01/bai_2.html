@@ -6,12 +6,15 @@
 </head>
 <body>
 <input type="text" id="Number"/>
-<button type="button" onclick="addOne()">+1</button>
+<button type="button" onclick="addOne(Number.value)">+1</button>
+
 </body>
 <script>
     function addOne(n) {
         n = parseInt(document.getElementById("Number").value);
-        document.getElementById("Number").value = n + 1;
+        n +=1;
+        document.getElementById("Number").value=n;
+        return n;
     }
 </script>
 </html>

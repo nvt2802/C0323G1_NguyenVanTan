@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    function isPrime(number) {
+    function isPrime(n) {
         let flag = true;
 
         if (n < 2) {
@@ -17,7 +17,7 @@
             flag = false;
         } else {
             for (let i = 3; i < Math.sqrt(n); i += 2) {
-                if (n % i == 0) {
+                if (n % i === 0) {
                     flag = false;
                     break;
                 }
@@ -26,11 +26,11 @@
         return flag;
     }
 
-    let n = +prompt("");
-    if (isPrime(n)) {
-        document.write(n + " la so nguyen to");
+    let num = +prompt("");
+    if (isPrime(num)) {
+        document.write(num + " la so nguyen to");
     } else {
-        document.write(n + " khong phai la so nguyen to");
+        document.write(num + " khong phai la so nguyen to");
     }
 </script>
 </body>
