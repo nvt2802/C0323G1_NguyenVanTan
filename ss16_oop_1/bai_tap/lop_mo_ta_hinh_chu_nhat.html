@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="700" style="border:1px solid #d3d3d3;">
+</canvas>
+<p id="result"></p>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.heigth = height;
+        }
+
+        calArea() {
+            return this.width * this.heigth;
+        }
+
+        calCircum() {
+            return (this.heigth + this.width) * 2;
+        }
+
+        canvas() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            // ctx.moveTo(100, 100);
+            // ctx.lineTo(this.width, 100);
+            // ctx.lineTo(this.width, this.heigth);
+            // ctx.lineTo(100, this.heigth);
+            // ctx.lineTo(100, 100);
+            // // ctx.fillStyle= ;
+            // ctx.fillRect(100,100,this.width,this.heigth);
+            ctx.strokeRect(100,100,this.width,this.heigth);
+        }
+    }
+
+    let retangle = new Rectangle(700, 500);
+    document.getElementById("result").innerHTML = 'Dien tich hinh chu nhat la: ' + retangle.calArea() +
+        '   Chu vi hinh chu nhat la: ' + retangle.calCircum();
+    retangle.canvas();
+</script>
+</body>
+</html>

@@ -15,12 +15,12 @@
 <script>
     let productName = ['cafe den', 'cafe sua', 'bac xiu', 'tra sua', 'sua tuoi', 'yaourt'];
 
-    function addProduct(x) {
+    function addProduct() {
         let addProductName = document.getElementById("inputProduct").value;
         if (addProductName === "") {
             alert("hop thoai rong!")
         } else {
-            productName.splice(x,1,addProductName);
+            productName.push(addProductName);
         }
         document.getElementById("inputProduct").value = "";
         displayProduct();
