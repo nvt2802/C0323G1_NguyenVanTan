@@ -40,10 +40,13 @@
     let lamp1 = new ElectricLamp(false);
     let button = new SwitchButton();
     button.connectToLamp(lamp1);
-    console.log(button.switchOn());
-    console.log(lamp1.checkOffOrOn());
-    console.log(button.switchOff());
-    console.log(lamp1.checkOffOrOn());
+    for (let i = 0; i < 10; i++) {
+        console.log(button.switchOn());
+        console.log(lamp1.checkOffOrOn());
+        console.log(button.switchOff());
+        console.log(lamp1.checkOffOrOn());
+    }
+
 
 </SCRIPT>
 </body>
