@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(name,IP) {
+            this.name = name;
+            this.IP = IP;
+            this.tinNhanDangSoan=[];
+            this.tinNhanDen=[];
+            this.tinNhanDaGui=[];
+        }
+        checkOnOrOff (test) {
+            if(test===false){
+                alert("dien thoai dang tat");
+            }else {
+                alert("dien thoai dang bat");
+            }
+        }
+        turnOn(){
+            return true;
+        }
+        turnOff(){
+            return false;
+        }
+        xacPin(){
+
+        }
+        soanTinNhan() {
+            let soanTinNhan = prompt("soan tin nhan");
+            return this.tinNhanDangSoan.push(soanTinNhan);
+        }
+
+        nhanTinNhan(n) {
+            return this.tinNhanDen.push(n);
+        }
+
+        guiTinNhan(IP) {
+            this.tinNhanDaGui.push(this.tinNhanDangSoan[0]);
+            tinNhanDen.push(this.tinNhanDaGui[])
+        }
+
+        checkTN() {
+
+        }
+
+        checkTNDaGui() {
+
+        }
+    }
+
+    let nokia = new Mobile('Nokia',1);
+    let iphone = new Mobile('Iphone',2);
+    // nokia.checkOnOrOff(nokia.turnOn());
+    nokia.soanTinNhan();
+    document.write(nokia.tinNhanDangSoan[0]);
+    nokia.guiTinNhan(2);
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weigth) {
+            this.weight = weigth;
+        }
+
+        decrease() {
+            return this.weight--;
+        }
+
+        isEmpty() {
+            return this.weight <= 0;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Humman {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            return this.gender === 'male';
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkApple(Apple) {
+            document.write("<br>apple weight: " + apple.getWeight());
+            return Apple.getWeight();
+        }
+
+        eat(Apple) {
+            if (!Apple.isEmpty()) {
+                document.write('<br>' + this.name + " eat apple");
+                Apple.decrease();
+                this.weight++;
+            } else {
+                document.write("<br>da an het tao!")
+            }
+        }
+
+        say() {
+            document.write('<br>hi im ' + this.name + ' my gender is ' + this.gender + ' my weight is ' + this.weight);
+        }
+
+        // getName() {
+        //     return this.name
+        // }
+        //
+        // setName(name) {
+        //     this.name = name;
+        // }
+        //
+        // getWeigth() {
+        //     return this.weight;
+        // }
+        //
+        // setWeigth(weigth) {
+        //     this.weight = weigth;
+        // }
+    }
+
+    let eva = new Humman('Eva', 'male', 45);
+    let adam = new Humman('Adam', 'male', 65);
+    let apple = new Apple(10);
+    eva.setGender('female');
+    eva.isMale();
+    while (apple.getWeight() > 0) {
+        adam.eat(apple);
+        adam.checkApple(apple);
+        adam.say();
+        eva.eat(apple);
+        eva.checkApple(apple);
+        eva.say();
+    }
+    eva.eat(apple);
+
+
+</script>
+</body>
+</html>
