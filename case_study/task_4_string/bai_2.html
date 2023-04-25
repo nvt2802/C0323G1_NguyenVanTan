@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = 'abcderfacdef';
+
+    function differentSymbolsNaive(s){
+        let arr = [];
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (!arr.includes(str[i])) {
+                arr.push(str[i]);
+                count++;
+            }
+        }
+        return count;
+    }
+    console.log(differentSymbolsNaive(str));
+</script>
+</body>
+</html>

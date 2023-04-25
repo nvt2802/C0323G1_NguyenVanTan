@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function charMax(str) {
+        let arr = [];
+        arr = str.split(" ");
+        let max = 0;
+        let maxstr;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].length > max) {
+                max = arr[i].length;
+                maxstr = arr[i];
+            }
+        }
+        return maxstr;
+    }
+
+    function nomalizeString(str) {
+        let after = [];
+        for (let i = 0; i < str.length; i++) {
+            if (i === 0 || str[i - 1] === ' ') {
+                if (str[i] !== ' ') {
+                    after.push(str[i].toUpperCase());
+                }
+            } else {
+                after.push(str[i].toLowerCase());
+            }
+        }
+        str = after.join('');
+        return str;
+    }
+
+
+    let str = prompt("nham chuoi bat ky");
+    document.write(str + '<br>');
+    document.write(nomalizeString(str));
+    document.write('<br>' + charMax(str));
+
+</script>
+</body>
+</html>

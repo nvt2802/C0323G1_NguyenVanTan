@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let menu = ['1.cafe', '2.cam vat', '3.nuoc ep ca rot', '4.nuoc ep ca chua', '5.nuoc loc', '6.nuoc dua', '7.thoat'];
+    let gia = [20000, 30000, 25000, 26000, 5000, 28000];
+    let monChon = 0;
+    let soLuong = 0;
+    let sum = 0;
+    do {
+        monChon = +prompt(menu);
+        if (monChon < 7) {
+            soLuong = +prompt('so luong');
+        } else {
+            break;
+        }
+        sum += gia[monChon - 1] * soLuong;
+    } while (monChon < 7);
+    alert("tong" + sum);
+
+</script>
+</body>
+</html>

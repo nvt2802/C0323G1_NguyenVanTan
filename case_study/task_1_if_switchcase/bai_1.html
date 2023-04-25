@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luongNV = +prompt("nhap luong nhan vien");
+
+    let thue = 0;
+    if (luongNV > 15000000) {
+        thue = 20 / 100;
+    } else if (luongNV > 7000000) {
+        thue = 10 / 100;
+    } else if (luongNV > 0) {
+        thue = 5 / 100;
+    } else {
+        luongNV = 0;
+    }
+    let luongRong = luongNV - luongNV * thue;
+    console.log(luongRong);
+</script>
+</body>
+</html>

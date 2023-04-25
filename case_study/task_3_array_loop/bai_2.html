@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr1 = [7,2,5,3,5,3];
+  let arr2 = [7,2,5,4,6,3,5,3];
+  let newarr =[];
+  for (let i = 0; i < arr2.length; i++) {
+      if(!arr1.includes(arr2[i])){
+            newarr.push(arr2[i]);
+      }
+  }
+  console.log(newarr);
+</script>
+</body>
+</html>

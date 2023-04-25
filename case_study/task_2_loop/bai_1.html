@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = 10;
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < i; j++) {
+            if (j > 0 && i < n - 1 && i > 2 && j < i - 1) {
+                document.write("&nbsp&nbsp");
+            } else
+            document.write('*');
+        }
+        document.write('<br>');
+    }
+</script>
+</body>
+</html>

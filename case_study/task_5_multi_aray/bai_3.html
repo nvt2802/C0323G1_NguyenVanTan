@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<SCRIPT>
+    function findMaxInArray(arr){
+        let max=-99999999999;
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]>max){
+                max=arr[i];
+            }
+        }
+        return max;
+    }
+    function findMinInArray(arr){
+        let min=99999999999;
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        }
+        return min;
+    }
+
+    let arr=[[1,2,3,4,5,6],[-1,-2,-3,-4,-5],[999,888,777],[-5,5,6,-999]];
+    let arrmax =[];
+    let arrmin = [];
+    for (let i = 0; i < arr.length; i++) {
+        arrmax.push(findMaxInArray(arr[i]));
+        arrmin.push(findMinInArray(arr[i]));
+    }
+   console.log(findMaxInArray(arrmax));
+    console.log(findMinInArray(arrmin));
+</SCRIPT>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [[1, 2, 3, 4, 5, 6, 7], [8, 9, 10, 11, 12, 13, 14, 15], [16, 17, 18, 19, 20]];
+    let newarr = [];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (isPrime(arr[i][j])) {
+                newarr.push(arr[i][j]);
+                count++;
+            }
+        }
+    }
+    console.log(newarr);
+    console.log('co ' + count + ' SNT');
+
+
+    function isPrime(n) {
+        let flag = true;
+
+        if (n < 2) {
+            flag = false;
+        } else if (n === 2) {
+            flag = true;
+        } else if (n % 2 === 0) {
+            flag = false;
+        } else {
+            for (let i = 3; i < Math.sqrt(n); i += 2) {
+                if (n % i === 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+</script>
+</body>
+</html>
