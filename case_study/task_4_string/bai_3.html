@@ -8,16 +8,16 @@
 <script>
     let s2 = 'addacdaaaadaaddca';
     let s1 = 'adabcdadddccadcc';
-    let count=0;
+    let count = 0;
     let s2split;
-    s2split=s2.split('');
+    s2split = s2.split('');
     let s1split;
-    s1split=s1.split('');
+    s1split = s1.split('');
     for (let i = 0; i < s1split.length; i++) {
         for (let j = 0; j < s2split.length; j++) {
-            if(s1split[i]===s2split[j]){
-                s1split.splice(i,1,'');
-                s2split.splice(j,1,' ');
+            if (s1split[i] === s2split[j]) {
+                s1split.splice(i, 1, '');
+                s2split.splice(j, 1, ' ');
                 count++;
             }
         }

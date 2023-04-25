@@ -60,9 +60,9 @@
 
     display();
 
-    function checkID(id){
+    function checkID(id) {
         for (let i = 0; i < arrayStudent.length; i++) {
-            if(id===arrayStudent[i][0]){
+            if (id === arrayStudent[i][0]) {
                 return false;
             }
         }
@@ -70,7 +70,7 @@
 
     function addNewStudent(variable) {
         let id = prompt("nhap id cua hoc vien");
-        if(!checkID(id)){
+        if (!checkID(id)) {
             alert("id trung lap!");
             return addNewStudent(variable);
         }
@@ -78,7 +78,7 @@
         let classname = prompt("nhap lop cua hoc vien");
         let email = prompt("nhap email cua hoc vien");
         let dob = prompt("nhap ngay sinh cua hoc vien");
-        let module = prompt("nhap module hoc vien dang hoc")
+        let module = prompt("nhap module hoc vien dang hoc");
         variable = new Student(id, name, classname, email, dob, module);
         arrayStudent.push(variable.toArray());
     }
@@ -94,10 +94,10 @@
         let check = false;
         for (let i = 0; i < arrayStudent.length; i++) {
             if (studentDelete === arrayStudent[i][0]) {
-                if(confirm("ban co chac chan muon xoa hoc vien "+studentDelete)) {
+                if (confirm("ban co chac chan muon xoa hoc vien " + studentDelete)) {
                     arrayStudent.splice(i, 1);
                     check = true;
-                }else {
+                } else {
                     return;
                 }
             }
@@ -108,13 +108,13 @@
         display();
     }
 
-    function editStudent(){
+    function editStudent() {
         let editStuden = prompt("nhap ID hoc vien can sua");
         let check = false;
         for (let i = 0; i < arrayStudent.length; i++) {
-            if(editStuden===arrayStudent[i][0]){
+            if (editStuden === arrayStudent[i][0]) {
                 let id = prompt("nhap id cua hoc vien");
-                if(!checkID(id)){
+                if (!checkID(id)) {
                     alert("id trung lap!");
                     return editStudent();
                 }
@@ -123,15 +123,15 @@
                 let email = prompt("nhap email cua hoc vien");
                 let dob = prompt("nhap ngay sinh cua hoc vien");
                 let module = prompt("nhap module hoc vien dang hoc")
-                arrayStudent[i][0]=id;
-                arrayStudent[i][1]=name;
-                arrayStudent[i][2]=classname;
-                arrayStudent[i][3]=email;
-                arrayStudent[i][4]=dob;
-                arrayStudent[i][5]=module;
-                check=true;
+                arrayStudent[i][0] = id;
+                arrayStudent[i][1] = name;
+                arrayStudent[i][2] = classname;
+                arrayStudent[i][3] = email;
+                arrayStudent[i][4] = dob;
+                arrayStudent[i][5] = module;
+                check = true;
             }
-            if(!check){
+            if (!check) {
                 alert("khong tim thay hoc vien" + editStuden);
             }
             display();
