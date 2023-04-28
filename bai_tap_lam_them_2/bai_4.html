@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin-left: 40px;
+            text-align: center
+        }
+
+        th, td, tr {
+            border: 1px solid gray;
+        }
+
+        button {
+            background-color: #909090;
+            color: #ffffff;
+            font-size: 15px;
+            text-align: center;
+            padding: 6px 20px;
+            width: 113px;
+            cursor: pointer;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            transition: background-color 0.3s
+        }
+
+        input {
+
+            padding: 1px 2px;
+            border-width: 2px;
+            border-style: inset;
+            border-image: initial;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<label for="ID"></label>
+<input type="text" id="ID" placeholder="nhap id"/>
+<label for="Name"></label>
+<input type="text" id="Name" placeholder="nhap ten san pham"/>
+<label for="NameNSX"></label>
+<input type="text" id="NameNSX" placeholder="nhap ten nha san xuat"/>
+<label for="Cost"></label>
+<input type="text" id="Cost" placeholder="nhap gia"/>
+<button type="button" id="AddComputer" onclick="addComputer()">ADD</button>
+<button type="button" id="EditComputer" onclick="updateComputer()" style="display: none">Update</button>
+<p id="eror" style="color: #d61b06; display: none">*Vui long nhap thong tin</p>
+<p id="result"></p>
+
+</body>
+<script>
+    class Computer {
+        getID() {
+            return this._ID;
+        }
+
+        setID(value) {
+            this._ID = value;
+        }
+
+        getName() {
+            return this._name;
+        }
+
+        setName(value) {
+            this._name = value;
+        }
+
+        getNameNSX() {
+            return this._nameNSX;
+        }
+
+        setNameNSX(value) {
+            this._nameNSX = value;
+        }
+
+        getCost() {
+            return this._cost;
+        }
+
+        setCost(value) {
+            this._cost = value;
+        }
+
+        toStringComputer() {
+            return 'ID: ' + this._ID + ' Name:' + this._name + ' Name NSX: ' + this._nameNSX + ' Cost: ' + this._cost;
+        }
+
+        constructor(ID, name, nameNSX, cost) {
+            this._ID = ID;
+            this._name = name;
+            this._nameNSX = nameNSX;
+            this._cost = cost;
+        }
+    }
+
+    let computerArr = [];
+    let asus = new Computer('123', 'Asus tuf', 'Asus', 20000000);
+    let macbook = new Computer('321', 'Macbook air', 'Apple', 30000000);
+    computerArr.push(asus, macbook);
+    display(computerArr);
+    let computerIndex = -1;
+
+    function display(arr) {
+        let tblStr = '<table>\n' +
+            '<tr>\n' +
+            '    <th colspan="7">Computer list</th>\n' +
+            '</tr>' +
+            '    <tr>\n' +
+            '        <th>#</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Name NSX</th>\n' +
+            '        <th>Cost</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < arr.length; i++) {
+            tblStr += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + computerArr[i].getID() + '</td>\n' +
+                '        <td>' + computerArr[i].getName() + '</td>\n' +
+                '        <td>' + computerArr[i].getNameNSX() + '</td>\n' +
+                '        <td>' + computerArr[i].getCost() + '</td>\n' +
+                '        <td><button type="button" onclick="editComputer(' + i + ')" style="width: 90%">Edit</button></td>\n' +
+                '        <td><button type="button" onclick="deleteComputer(' + i + ')" style="width: 90%">Delete</button></td>\n' +
+                '    </tr>';
+        }
+        tblStr += '</table>';
+        document.getElementById('result').innerHTML = tblStr;
+    }
+
+    function deleteComputer(index) {
+        let conf = confirm("ban co chac chan muon xoa " + computerArr[index].getName());
+        if (conf) {
+            computerArr.splice(index, 1);
+        }
+        display(computerArr);
+    }
+
+    function checkSpaceInput(value1, value2, value3, value4) {
+        if (isNotSpace(value1) && isNotSpace(value2) && isNotSpace(value3) && isNotSpace(value4)) {
+            document.getElementById("eror").style.display = "none";
+            return true;
+        } else {
+            document.getElementById("eror").style.display = "inline";
+            return false;
+        }
+    }
+
+    function isNotSpace(value) {
+        let count = 0;
+        let arr = [];
+        arr = value.split('');
+        console.log(arr);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === ' ') {
+                count++;
+                arr.splice(i, 1, '');
+            }
+        }
+        console.log(arr);
+        console.log(count);
+        return !arr.join('') === '';
+    }
+
+    function addComputer() {
+        let newID = document.getElementById("ID").value;
+        let newName = document.getElementById("Name").value;
+        let newNameNSX = document.getElementById("NameNSX").value;
+        let newCost = document.getElementById("Cost").value;
+        if (checkSpaceInput(newID, newName, newNameNSX, newCost)) {
+            let newComputer = new Computer(newID, newName, newNameNSX, newCost);
+            computerArr.push(newComputer);
+            noneValueInput();
+            display(computerArr);
+        }
+    }
+
+    function editComputer(index) {
+        computerIndex = index;
+        document.getElementById("ID").value = computerArr[index].getID();
+        document.getElementById("Name").value = computerArr[index].getName();
+        document.getElementById("NameNSX").value = computerArr[index].getNameNSX();
+        document.getElementById("Cost").value = computerArr[index].getCost();
+        document.getElementById("AddComputer").style.display = "none";
+        document.getElementById("EditComputer").style.display = "inline";
+    }
+
+    function noneValueInput() {
+        document.getElementById("ID").value = '';
+        document.getElementById("Name").value = '';
+        document.getElementById("NameNSX").value = '';
+        document.getElementById("Cost").value = '';
+    }
+
+    function updateComputer() {
+        let updateID = document.getElementById("ID").value;
+        let updateName = document.getElementById("Name").value;
+        let updateNameNSX = document.getElementById("NameNSX").value;
+        let updateCost = document.getElementById("Cost").value;
+        if (checkSpaceInput(updateID, updateName, updateNameNSX, updateCost)) {
+            computerArr[computerIndex].setID(updateID);
+            computerArr[computerIndex].setName(updateName);
+            computerArr[computerIndex].setNameNSX(updateNameNSX);
+            computerArr[computerIndex].setCost(updateCost);
+            document.getElementById("EditComputer").style.display = "none";
+            document.getElementById("AddComputer").style.display = "inline";
+            noneValueInput();
+            display(computerArr);
+        }
+    }
+</script>
+</html>

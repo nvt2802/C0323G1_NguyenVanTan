@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("");
+    if (n <= 50) {
+        let newArr = [];
+        let arr = new Array(n);
+        for (let i = 0; i < n; i++) {
+            arr[i] = +prompt("phan tu thu" + (i + 1));
+            if (i % 3 === 0 && arr[i] % 5 === 0) {
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(arr);
+        console.log(averageOfAr(newArr));
+    }
+    function averageOfAr(arr){
+        let sum=0;
+        for (let i = 0; i < arr.length; i++) {
+            sum+=arr[i];
+        }
+        return sum/arr.length;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findFibonaci(arr) {
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        let fiboArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (isFibonaci(arr[i])) {
+                fiboArr.push(arr[i]);
+            }
+        }
+
+        return fiboArr;
+    }
+
+    function isFibonaci(num) {
+        let n1 = 0;
+        let n2 = 1;
+        let nextTemp = n1 + n2;
+        let arr = [];
+        let check = false;
+        for (let i = 0; i <= num; i++) {
+            if (n1 > num) {
+                break;
+            }
+            arr.push(n1);
+            if (arr[i] === num) {
+                check = true;
+            }
+            nextTemp = n1 + n2;
+            n1 = n2;
+            n2 = nextTemp;
+        }
+
+        return check;
+    }
+
+    console.log(findFibonaci([1, 0, 3, 1, 2, 4, 6, 6, 8, 578, 96, 85, 7, 4, 233, 42, 34, 56, 646, 21, 68]));
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("");
+    let a;
+    if(n%2===0){
+        a=1;
+    }else {
+        a=2;
+    }
+    let sum=0;
+    for (let i = a; i <= n; i+2) {
+        sum*=i;
+    }
+    alert(sum);
+</script>
+</body>
+</html>

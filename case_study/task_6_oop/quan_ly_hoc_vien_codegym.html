@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-
         table {
             border-collapse: collapse;
-            width: 50%;
+            width: 90%;
+            margin-left: 40px;
             text-align: center
         }
 
         th, td, tr {
             border: 1px solid gray;
         }
-
     </style>
 </head>
 <body>
-<button type="button" onclick="addVariableOfNewStudent()">Thêm mới học viên</button>
+<button type="button" onclick="addNewStudent()">Thêm mới học viên</button>
 <button type="button" onclick="editStudent()">Sửa thông tin học viên</button>
 <button type="button" onclick="deleteStudent()">Xóa học viên</button>
 <p id="display"></p>
@@ -89,18 +88,24 @@
         }
     }
 
+    let arrayStudent = [];
     let student1 = new Student('HV-001', 'Nguyen Van A', 'C323G1', 'nva@gmail.com', '28/02/2002', 1);
     let student2 = new Student('HV-002', 'Nguyen Van B', 'C323G1', 'nvb@gmail.com', '27/02/2002', 1);
-    let arrayStudent = [student1.toArray(), student2.toArray()];
+    arrayStudent.push(student1, student2)
 
     function display() {
         let tbstr = '<table >' +
             '<tr><th>ID</th><th>Name</th><th>Class</th><th>Email</th><th>Day of birth</th><th>Module</th></tr>';
         for (let i = 0; i < arrayStudent.length; i++) {
             tbstr += '<Tr>';
-            for (let j = 0; j < arrayStudent[i].length; j++) {
-                tbstr += '<td>' + arrayStudent[i][j] + '</td>';
-            }
+
+            tbstr += '<td>' + arrayStudent[i].getID() + '</td>' +
+                '<td>' + arrayStudent[i].getName() + '</td>' +
+                '<td>' + arrayStudent[i].getClassname() + '</td>' +
+                '<td>' + arrayStudent[i].getEmail() + '</td>' +
+                '<td>' + arrayStudent[i].getBday() + '</td>' +
+                '<td>' + arrayStudent[i].getModule() + '</td>';
+
             tbstr += '</Tr>';
         }
         tbstr += '</table>';
@@ -126,12 +131,14 @@
             note += 'module chi tu 1-6!';
             check = false;
         }
-        alert(note);
+        if (!check) {
+            alert(note);
+        }
         return check;
 
     }
 
-    function addNewStudent(variable) {
+    function addNewStudent(newStudent) {
         let id = prompt("nhap id cua hoc vien");
         let name = prompt("nhap ten hoc cua vien");
         let classname = prompt("nhap lop cua hoc vien");
@@ -139,24 +146,20 @@
         let dob = prompt("nhap ngay sinh cua hoc vien");
         let module = prompt("nhap module hoc vien dang hoc");
         if (!checkInf(id, name, module)) {
-            return addNewStudent(variable);
+            return addNewStudent(newStudent);
         }
-        variable = new Student(id, name, classname, email, dob, module);
-        arrayStudent.push(variable.toArray());
-    }
-
-    function addVariableOfNewStudent() {
-        let nameVariable = 'student' + (arrayStudent.length + 1);
-        addNewStudent(nameVariable);
+        newStudent = new Student(id, name, classname, email, dob, module);
+        arrayStudent.push(newStudent);
         display();
     }
 
     function deleteStudent() {
         let studentDelete = prompt('nhap id hoc vien can xoa');
         let check = false;
+        let conf =confirm("ban co chac chan muon xoa hoc vien " + studentDelete)
         for (let i = 0; i < arrayStudent.length; i++) {
-            if (studentDelete === arrayStudent[i][0]) {
-                if (confirm("ban co chac chan muon xoa hoc vien " + studentDelete)) {
+            if (studentDelete === arrayStudent[i].getID()) {
+                if (conf) {
                     arrayStudent.splice(i, 1);
                     check = true;
                 } else {
@@ -174,7 +177,7 @@
         let editStuden = prompt("nhap ID hoc vien can sua");
         let check = false;
         for (let i = 0; i < arrayStudent.length; i++) {
-            if (editStuden === arrayStudent[i][0]) {
+            if (editStuden === arrayStudent[i].getID()) {
                 let id = prompt("nhap id cua hoc vien");
                 let name = prompt("nhap ten hoc cua vien");
                 let classname = prompt("nhap lop cua hoc vien");
@@ -184,12 +187,12 @@
                 if (!checkInf(id, name, module)) {
                     return editStudent();
                 }
-                arrayStudent[i][0] = id;
-                arrayStudent[i][1] = name;
-                arrayStudent[i][2] = classname;
-                arrayStudent[i][3] = email;
-                arrayStudent[i][4] = dob;
-                arrayStudent[i][5] = module;
+                arrayStudent[i].setID(id);
+                arrayStudent[i].setName(name);
+                arrayStudent[i].setClassname(classname);
+                arrayStudent[i].setEmail(email);
+                arrayStudent[i].setBday(dob);
+                arrayStudent[i].setModule(module);
                 check = true;
             }
         }
