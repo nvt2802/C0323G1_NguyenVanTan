@@ -7,17 +7,15 @@
 <body>
 <script>
     let n = +prompt("");
-    let a;
+    let a=1;
     if(n%2===0){
-        a=1;
-    }else {
         a=2;
     }
-    let sum=0;
-    for (let i = a; i <= n; i+2) {
+    let sum=1;
+    for (let i = a; i <= n; i+=2) {
         sum*=i;
     }
-    alert(sum);
+    console.log(sum);
 </script>
 </body>
 </html>

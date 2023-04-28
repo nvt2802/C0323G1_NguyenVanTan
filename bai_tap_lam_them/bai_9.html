@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let strUpper = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+    let arr = ['s', 'a', 'N', 'W', 'q'];
+    console.log(arr.reverse());
+    let upperAr = [];
+    let lowerAr = [];
+    let newAr = []
+    for (let i = 0; i < arr.length; i++) {
+        upperAr.push(arr[i].toUpperCase());
+        lowerAr.push(arr[i].toLowerCase());
+        if (strUpper.includes(arr[i])) {
+            newAr.push(arr[i].toLowerCase());
+        } else {
+            newAr.push(arr[i].toUpperCase());
+        }
+    }
+    console.log(upperAr);
+    console.log(lowerAr);
+    console.log(newAr);
+
+</script>
+</body>
+</html>

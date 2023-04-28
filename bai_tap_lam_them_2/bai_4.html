@@ -41,6 +41,9 @@
     </style>
 </head>
 <body>
+<input type="search" id="Search" placeholder="Tim san pham"/>
+<button type="button" onclick="searchComputer()">Search</button>
+<br>
 <label for="ID"></label>
 <input type="text" id="ID" placeholder="nhap id"/>
 <label for="Name"></label>
@@ -123,10 +126,10 @@
         for (let i = 0; i < arr.length; i++) {
             tblStr += ' <tr>\n' +
                 '        <td>' + (i + 1) + '</td>\n' +
-                '        <td>' + computerArr[i].getID() + '</td>\n' +
-                '        <td>' + computerArr[i].getName() + '</td>\n' +
-                '        <td>' + computerArr[i].getNameNSX() + '</td>\n' +
-                '        <td>' + computerArr[i].getCost() + '</td>\n' +
+                '        <td>' + arr[i].getID() + '</td>\n' +
+                '        <td>' + arr[i].getName() + '</td>\n' +
+                '        <td>' + arr[i].getNameNSX() + '</td>\n' +
+                '        <td>' + arr[i].getCost() + '</td>\n' +
                 '        <td><button type="button" onclick="editComputer(' + i + ')" style="width: 90%">Edit</button></td>\n' +
                 '        <td><button type="button" onclick="deleteComputer(' + i + ')" style="width: 90%">Delete</button></td>\n' +
                 '    </tr>';
@@ -144,29 +147,14 @@
     }
 
     function checkSpaceInput(value1, value2, value3, value4) {
-        if (isNotSpace(value1) && isNotSpace(value2) && isNotSpace(value3) && isNotSpace(value4)) {
-            document.getElementById("eror").style.display = "none";
-            return true;
-        } else {
+
+        if (value1.trim() === '' || value2.trim() === '' || value3.trim() === '' || value4.trim() === '') {
             document.getElementById("eror").style.display = "inline";
             return false;
+        } else {
+            document.getElementById("eror").style.display = "none";
+            return true;
         }
-    }
-
-    function isNotSpace(value) {
-        let count = 0;
-        let arr = [];
-        arr = value.split('');
-        console.log(arr);
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === ' ') {
-                count++;
-                arr.splice(i, 1, '');
-            }
-        }
-        console.log(arr);
-        console.log(count);
-        return !arr.join('') === '';
     }
 
     function addComputer() {
@@ -215,5 +203,18 @@
             display(computerArr);
         }
     }
+
+    function searchComputer(){
+        let strSearch = document.getElementById("Search").value;
+        let arrSearch =[];
+        for (let i = 0; i < computerArr.length; i++) {
+            if(computerArr[i].toStringComputer().includes(strSearch)){
+                arrSearch.push(computerArr[i]);
+            }
+        }
+        document.getElementById("Search").value="";
+        display(arrSearch);
+    }
+
 </script>
 </html>
